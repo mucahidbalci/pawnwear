@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PAWN WEAR — Takı Koleksiyonu</title>
+<meta name="description" content="PAWN WEAR — zamansız çizgilerle tasarlanmış takı koleksiyonu. Kolye, küpe, yüzük ve bileklikler.">
+<meta name="theme-color" content="#F6F2EC">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   PAWN WEAR — tek sayfa taslak
+   Renkler / tipografi / boşluklar aşağıdaki :root içinde.
+   ============================================================ */
+:root{
+  --bone:#F6F2EC;
+  --paper:#FBF9F6;
+  --ink:#17150F;
+  --muted:#7B7368;
+  --gold:#A98B5D;
+  --gold-soft:#C9B393;
+  --line:#E3DBD1;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Jost',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --pad:clamp(20px,5vw,72px);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bone);color:var(--ink);
+  font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;line-height:1.02;letter-spacing:-.01em}
+p{margin:0}
+::selection{background:var(--gold);color:#fff}
+
+.wrap{width:100%;max-width:1440px;margin:0 auto;padding:0 var(--pad)}
+.eyebrow{
+  font-size:10.5px;letter-spacing:.32em;text-transform:uppercase;
+  color:var(--gold);font-weight:500;
+}
+.rule{height:1px;background:var(--line);border:0;margin:0}
+
+/* ---------- TASLAK ETİKETİ ---------- */
+.draft{
+  position:fixed;left:16px;top:50%;transform:translateY(-50%) rotate(180deg);
+  writing-mode:vertical-rl;z-index:80;font-size:9px;letter-spacing:.3em;
+  text-transform:uppercase;background:var(--ink);color:var(--bone);
+  padding:12px 7px;border-radius:2px;opacity:.85;
+}
+@media(max-width:900px){.draft{display:none}}
+
+/* ---------- DUYURU ---------- */
+.bar{
+  background:var(--ink);color:var(--bone);text-align:center;
+  font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;
+  padding:11px 16px;
+}
+
+/* ---------- HEADER ---------- */
+header{
+  position:sticky;top:0;z-index:60;background:rgba(246,242,236,.86);
+  backdrop-filter:blur(14px);border-bottom:1px solid transparent;
+  transition:border-color .4s var(--ease),background .4s var(--ease);
+}
+header.stuck{border-bottom-color:var(--line)}
+.nav{
+  display:flex;align-items:center;justify-content:space-between;
+  height:76px;gap:24px;
+}
+.logo{
+  font-family:var(--serif);font-size:22px;letter-spacing:.42em;
+  text-transform:uppercase;font-weight:500;padding-left:.42em;white-space:nowrap;
+}
+.nav-links{display:flex;gap:34px;align-items:center}
+.nav-links a{
+  font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  padding:6px 0;position:relative;
+}
+.nav-links a::after{
+  content:"";position:absolute;left:0;bottom:0;width:100%;height:1px;
+  background:var(--gold);transform:scaleX(0);transform-origin:right;
+  transition:transform .45s var(--ease);
+}
+.nav-links a:hover::after{transform:scaleX(1);transform-origin:left}
+.nav-right{display:flex;align-items:center;gap:18px}
+.icon-link{display:grid;place-items:center;width:34px;height:34px;opacity:.85;transition:opacity .3s}
+.icon-link:hover{opacity:1}
+.icon-link svg{width:17px;height:17px}
+.burger{display:none;width:34px;height:34px;place-items:center}
+.burger span{display:block;width:20px;height:1px;background:var(--ink);position:relative}
+.burger span::before,.burger span::after{
+  content:"";position:absolute;left:0;width:20px;height:1px;background:var(--ink);
+}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+
+/* ---------- MOBİL MENÜ ---------- */
+.drawer{
+  position:fixed;inset:0;z-index:90;background:var(--paper);
+  display:flex;flex-direction:column;padding:22px var(--pad) 40px;
+  transform:translateY(-100%);transition:transform .55s var(--ease);
+}
+.drawer.open{transform:translateY(0)}
+.drawer-top{display:flex;justify-content:space-between;align-items:center;height:56px}
+.close{font-size:26px;line-height:1;font-family:var(--serif)}
+.drawer nav{margin-top:auto;display:flex;flex-direction:column;gap:6px}
+.drawer nav a{
+  font-family:var(--serif);font-size:clamp(30px,9vw,44px);
+  padding:8px 0;border-bottom:1px solid var(--line);
+}
+.drawer-foot{margin-top:34px;display:flex;flex-direction:column;gap:12px;font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;padding:clamp(48px,9vw,110px) 0 clamp(56px,8vw,96px);overflow:hidden}
+.hero::before{
+  content:"";position:absolute;right:-12%;top:-18%;width:62vw;height:62vw;
+  max-width:780px;max-height:780px;border-radius:50%;
+  background:radial-gradient(circle at 40% 40%,#EFE6D8 0%,rgba(239,230,216,.35) 45%,transparent 72%);
+  pointer-events:none;
+}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(24px,5vw,64px);align-items:center}
+.hero h1{font-size:clamp(46px,9.5vw,116px);line-height:.94;letter-spacing:-.025em}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero p.lead{
+  margin-top:26px;max-width:38ch;color:var(--muted);font-size:clamp(14px,1.5vw,16.5px);
+}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  min-height:52px;padding:0 34px;font-size:11px;letter-spacing:.22em;
+  text-transform:uppercase;border:1px solid var(--ink);position:relative;overflow:hidden;
+  transition:color .45s var(--ease);
+}
+.btn::before{
+  content:"";position:absolute;inset:0;background:var(--ink);z-index:-1;
+  transform:translateY(101%);transition:transform .45s var(--ease);
+}
+.btn{z-index:0}
+.btn:hover{color:var(--bone)}
+.btn:hover::before{transform:translateY(0)}
+.btn.solid{background:var(--ink);color:var(--bone)}
+.btn.solid::before{background:var(--gold)}
+.btn.solid:hover{color:#fff;border-color:var(--gold)}
+.btn.ghost{border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--ink)}
+
+.hero-figure{position:relative}
+.hero-frame{
+  aspect-ratio:4/5;border:1px solid var(--line);background:
+    linear-gradient(150deg,#EFE8DC,#F7F2EA 45%,#E7DCCA);
+  position:relative;overflow:hidden;
+}
+.hero-frame img{width:100%;height:100%;object-fit:cover}
+.hero-frame .ph-mark{
+  position:absolute;inset:0;display:grid;place-items:center;
+  font-family:var(--serif);font-size:clamp(40px,7vw,68px);letter-spacing:.3em;
+  color:#CFC0A6;padding-left:.3em;
+}
+.hero-note{
+  position:absolute;bottom:-14px;left:-14px;background:var(--bone);
+  border:1px solid var(--line);padding:12px 18px;font-size:10px;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--muted);
+}
+
+/* ---------- MARQUEE ---------- */
+.marquee{border-block:1px solid var(--line);overflow:hidden;padding:14px 0}
+.marquee-track{display:flex;gap:56px;width:max-content;animation:slide 34s linear infinite}
+.marquee span{
+  font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);
+  display:flex;align-items:center;gap:56px;white-space:nowrap;
+}
+.marquee span::after{content:"";width:4px;height:4px;background:var(--gold);border-radius:50%}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ---------- BÖLÜM ---------- */
+section{scroll-margin-top:90px}
+.sec{padding:clamp(56px,9vw,110px) 0}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:28px;flex-wrap:wrap;margin-bottom:clamp(28px,4vw,48px)}
+.sec-head h2{font-size:clamp(30px,5.2vw,54px)}
+.sec-head p{color:var(--muted);max-width:34ch;font-size:14px}
+
+/* ---------- KATEGORİ ---------- */
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.cat{
+  position:relative;aspect-ratio:3/4;border:1px solid var(--line);
+  display:flex;align-items:flex-end;padding:18px;overflow:hidden;
+  background:linear-gradient(180deg,#F3ECE1,#E8DDCB);
+}
+.cat span{
+  font-family:var(--serif);font-size:clamp(16px,1.9vw,23px);
+  position:relative;z-index:2;
+}
+.cat small{position:absolute;top:16px;left:18px;font-size:9.5px;letter-spacing:.24em;color:var(--gold);text-transform:uppercase}
+.cat::after{
+  content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(23,21,15,.42));
+  transition:opacity .4s var(--ease);
+}
+.cat span{color:#fff;text-shadow:0 1px 14px rgba(0,0,0,.35)}
+.cat:hover::after{opacity:.75}
+
+/* ---------- FİLTRE ---------- */
+.filters{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.filters::-webkit-scrollbar{display:none}
+.chip{
+  flex:0 0 auto;padding:9px 18px;border:1px solid var(--line);border-radius:100px;
+  font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);
+  transition:.3s var(--ease);white-space:nowrap;
+}
+.chip.on{background:var(--ink);border-color:var(--ink);color:var(--bone)}
+
+/* ---------- ÜRÜNLER ---------- */
+.grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:clamp(12px,2vw,26px) clamp(10px,1.6vw,20px);
+}
+.card{position:relative}
+.card-media{
+  position:relative;aspect-ratio:3/4;overflow:hidden;background:#EFE7DA;
+  border:1px solid var(--line);
+}
+.card-media img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .9s var(--ease),filter .5s var(--ease);
+}
+.card:hover .card-media img{transform:scale(1.045)}
+.ph{
+  position:absolute;inset:0;display:grid;place-items:center;
+  background:linear-gradient(160deg,#F1EADF,#E6DAC7);
+  font-family:var(--serif);font-size:26px;letter-spacing:.34em;color:#CBBBA0;padding-left:.34em;
+}
+.card-body{padding:14px 2px 0}
+.card-name{font-size:13.5px;letter-spacing:.02em;font-weight:400}
+.card-price{margin-top:3px;font-size:12.5px;color:var(--muted);letter-spacing:.06em}
+.card-buy{
+  display:inline-flex;align-items:center;gap:7px;margin-top:10px;
+  font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);
+  border-bottom:1px solid transparent;padding-bottom:2px;transition:border-color .3s;
+}
+.card-buy:hover{border-bottom-color:var(--gold)}
+.card-buy svg{width:11px;height:11px}
+.badge{
+  position:absolute;top:10px;left:10px;z-index:2;background:var(--bone);
+  font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;padding:5px 9px;
+}
+
+/* ---------- EDİTORYAL ---------- */
+.editorial{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,6vw,80px);align-items:center}
+.editorial .frame{aspect-ratio:5/6;border:1px solid var(--line);background:linear-gradient(160deg,#EFE7DA,#DFD3BE);overflow:hidden;position:relative}
+.editorial .frame img{width:100%;height:100%;object-fit:cover}
+.editorial h2{font-size:clamp(28px,4.6vw,50px);line-height:1.06}
+.editorial p{color:var(--muted);margin-top:20px;max-width:44ch;font-size:14.5px}
+.stats{display:flex;gap:40px;margin-top:34px;flex-wrap:wrap}
+.stats b{font-family:var(--serif);font-size:32px;font-weight:400;display:block;line-height:1}
+.stats small{font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+
+/* ---------- GÜVEN ---------- */
+.trust{display:grid;grid-template-columns:repeat(3,1fr);border-block:1px solid var(--line)}
+.trust div{padding:clamp(24px,4vw,40px) 20px;text-align:center;border-left:1px solid var(--line)}
+.trust div:first-child{border-left:0}
+.trust svg{width:22px;height:22px;margin:0 auto 14px;color:var(--gold)}
+.trust h3{font-family:var(--sans);font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:500}
+.trust p{font-size:12.5px;color:var(--muted);margin-top:6px}
+
+/* ---------- INSTAGRAM ---------- */
+.ig-band{text-align:center}
+.ig-handles{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+
+/* ---------- SSS ---------- */
+.faq{max-width:820px;margin:0 auto}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{
+  list-style:none;cursor:pointer;padding:22px 0;display:flex;
+  justify-content:space-between;gap:20px;align-items:center;font-size:14.5px;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary i{font-style:normal;color:var(--gold);font-size:18px;transition:transform .35s var(--ease);flex:0 0 auto}
+.faq details[open] summary i{transform:rotate(45deg)}
+.faq p{color:var(--muted);font-size:13.5px;padding:0 0 24px;max-width:62ch}
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--ink);color:#C9C1B5;padding:clamp(48px,7vw,84px) 0 40px;margin-top:0}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px}
+.foot-logo{font-family:var(--serif);font-size:24px;letter-spacing:.4em;color:var(--bone);padding-left:.4em}
+footer p{font-size:13px;max-width:34ch;margin-top:16px;color:#9A9287}
+.foot-grid h4{font-size:9.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);font-weight:500;margin:0 0 16px}
+.foot-grid ul{list-style:none;padding:0;margin:0;display:grid;gap:9px;font-size:13px}
+.foot-grid a:hover{color:var(--bone)}
+.foot-bottom{
+  margin-top:52px;padding-top:22px;border-top:1px solid #2C2822;
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#7E766B;
+}
+
+/* ---------- SABİT ÇUBUK ---------- */
+.dock{
+  position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;
+  background:rgba(251,249,246,.94);backdrop-filter:blur(12px);
+  border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom);
+}
+.dock a{
+  flex:1;display:flex;align-items:center;justify-content:center;gap:8px;
+  min-height:56px;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
+}
+.dock a+a{border-left:1px solid var(--line)}
+.dock a.wa{background:var(--ink);color:var(--bone)}
+.dock svg{width:15px;height:15px}
+
+.wa-float{
+  position:fixed;right:22px;bottom:22px;z-index:70;width:54px;height:54px;
+  border-radius:50%;background:var(--ink);color:var(--bone);display:grid;place-items:center;
+  box-shadow:0 10px 30px rgba(23,21,15,.24);transition:transform .35s var(--ease);
+}
+.wa-float:hover{transform:translateY(-3px)}
+.wa-float svg{width:22px;height:22px}
+
+/* ---------- REVEAL ---------- */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rv.in{opacity:1;transform:none}
+
+/* ---------- MOBİL ---------- */
+@media(max-width:1024px){
+  .grid{grid-template-columns:repeat(3,1fr)}
+  .cats{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:820px){
+  .nav-links{display:none}
+  .burger{display:grid}
+  .hero-grid{grid-template-columns:1fr}
+  .hero-figure{order:-1;max-width:440px;width:100%}
+  .hero-frame{aspect-ratio:1/1}
+  .editorial{grid-template-columns:1fr}
+  .trust{grid-template-columns:1fr;border-block:none}
+  .trust div{border-left:0;border-top:1px solid var(--line)}
+  .trust div:first-child{border-top:0}
+  .foot-grid{grid-template-columns:1fr;gap:32px}
+  .dock{display:flex}
+  .wa-float{display:none}
+  body{padding-bottom:56px}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .sec-head{flex-direction:column;align-items:flex-start}
+  .hero-note{bottom:auto;top:-12px;left:0}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms!important;transition-duration:.001ms!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<div class="draft">Taslak</div>
+
+<div class="bar">Tüm Türkiye'ye kargo &nbsp;·&nbsp; 750 ₺ üzeri ücretsiz</div>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="#top" class="logo">Pawn Wear</a>
+    <nav class="nav-links">
+      <a href="#koleksiyon">Koleksiyon</a>
+      <a href="#urunler">Ürünler</a>
+      <a href="#hakkimizda">Hakkımızda</a>
+      <a href="#sss">S.S.S.</a>
+      <a href="#iletisim">İletişim</a>
+    </nav>
+    <div class="nav-right">
+      <a class="icon-link" href="https://www.instagram.com/pawn.wear/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <button class="burger" id="burger" aria-label="Menü"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="drawer" id="drawer">
+  <div class="drawer-top">
+    <span class="logo">Pawn Wear</span>
+    <button class="close" id="close" aria-label="Kapat">×</button>
+  </div>
+  <nav>
+    <a href="#koleksiyon">Koleksiyon</a>
+    <a href="#urunler">Ürünler</a>
+    <a href="#hakkimizda">Hakkımızda</a>
+    <a href="#sss">S.S.S.</a>
+    <a href="#iletisim">İletişim</a>
+  </nav>
+  <div class="drawer-foot">
+    <a href="https://www.shopier.com/pawnwear" target="_blank" rel="noopener">Shopier Mağazası ↗</a>
+    <a href="https://www.instagram.com/pawn.wear/" target="_blank" rel="noopener">Instagram ↗</a>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Son Koleksiyon — 2026</p>
+        <h1 style="margin-top:18px">Takı değil,<br><em>imza.</em></h1>
+        <p class="lead">Az sayıda, özenle seçilmiş parça. Günlük kullanıma dayanıklı, zamansız çizgiler. Her detay kendini göstermek için değil, hatırlanmak için.</p>
+        <div class="hero-cta">
+          <a class="btn solid" href="#urunler">Koleksiyonu Keşfet</a>
+          <a class="btn ghost" href="https://www.shopier.com/pawnwear" target="_blank" rel="noopener">Shopier ↗</a>
+        </div>
+      </div>
+      <div class="hero-figure">
+        <div class="hero-frame" id="heroFrame">
+          <span class="ph-mark">PW</span>
+        </div>
+        <div class="hero-note">Koleksiyon No. 01</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>Hipoalerjenik</span><span>Suya dayanıklı</span><span>Kararma yapmaz</span><span>El işçiliği</span><span>Kutulu teslim</span>
+      <span>Hipoalerjenik</span><span>Suya dayanıklı</span><span>Kararma yapmaz</span><span>El işçiliği</span><span>Kutulu teslim</span>
+    </div>
+  </div>
+
+  <!-- KATEGORİLER -->
+  <section class="sec" id="koleksiyon">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <p class="eyebrow">Kategoriler</p>
+          <h2 style="margin-top:14px">Nereden başlamak istersin</h2>
+        </div>
+        <p>Dört başlık, tek bir çizgi. Tüm parçalar aynı elden çıkar.</p>
+      </div>
+      <div class="cats rv">
+        <a class="cat" href="https://www.shopier.com/pawnwear" target="_blank" rel="noopener"><small>01</small><span>Kolye</span></a>
+        <a class="cat" href="https://www.shopier.com/pawnwear" target="_blank" rel="noopener"><small>02</small><span>Küpe</span></a>
+        <a class="cat" href="https://www.shopier.com/pawnwear" target="_blank" rel="noopener"><small>03</small><span>Yüzük</span></a>
+        <a class="cat" href="https://www.shopier.com/pawnwear" target="_blank" rel="noopener"><small>04</small><span>Bileklik</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÜRÜNLER -->
+  <section class="sec" id="urunler" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <p class="eyebrow">Seçki</p>
+          <h2 style="margin-top:14px">Ürünler</h2>
+        </div>
+        <p>Beğendiğin parçanın üzerine dokun, siparişini Shopier üzerinden güvenle tamamla.</p>
+      </div>
+      <div class="filters rv" id="filters">
+        <button class="chip on" data-f="all">Tümü</button>
+        <button class="chip" data-f="Kolye">Kolye</button>
+        <button class="chip" data-f="Küpe">Küpe</button>
+        <button class="chip" data-f="Yüzük">Yüzük</button>
+        <button class="chip" data-f="Bileklik">Bileklik</button>
+        <button class="chip" data-f="Set">Set</button>
+      </div>
+      <div class="grid" id="grid" style="margin-top:26px"></div>
+    </div>
+  </section>
+
+  <!-- EDİTORYAL -->
+  <section class="sec" id="hakkimizda" style="padding-top:0">
+    <div class="wrap editorial">
+      <div class="frame rv" id="storyFrame"></div>
+      <div class="rv">
+        <p class="eyebrow">Hakkımızda</p>
+        <h2 style="margin-top:14px">Süs değil,<br>sahip olunan.</h2>
+        <p>PAWN WEAR, kalabalığa karışmayan parçalar için kuruldu. Her model küçük partiler halinde üretilir; bu yüzden aynı takıyı çok az kişide görürsün.</p>
+        <p>Malzeme seçiminde günlük hayat önceliğimiz: duşta çıkarmadan taktığın, aylar sonra ilk günkü rengini koruyan parçalar.</p>
+        <div class="stats">
+          <div><b>10K+</b><small>Takipçi</small></div>
+          <div><b>%100</b><small>Orjinal Ürün</small></div>
+          <div><b>1–3 Gün</b><small>Kargo</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GÜVEN -->
+  <div class="wrap">
+    <div class="trust rv">
+      <div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="10" width="18" height="11" rx="2"/><path d="M7 10V7a5 5 0 0110 0v3"/></svg>
+        <h3>Güvenli Ödeme</h3>
+        <p>Shopier altyapısı, 3D Secure</p>
+      </div>
+      <div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 7h11v10H3z"/><path d="M14 10h4l3 3v4h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/></svg>
+        <h3>Hızlı Kargo</h3>
+        <p>Aynı gün kargoya teslim</p>
+      </div>
+      <div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 12a9 9 0 1015.5-6.2"/><path d="M18 3v5h-5"/></svg>
+        <h3>Kolay Değişim</h3>
+        <p>14 gün içinde iade hakkı</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- INSTAGRAM -->
+  <section class="sec ig-band">
+    <div class="wrap rv">
+      <p class="eyebrow">@pawn.wear</p>
+      <h2 style="margin-top:14px;font-size:clamp(28px,4.8vw,50px)">Kamera arkası ve<br>yeni gelenler</h2>
+      <div class="ig-handles">
+        <a class="btn ghost" href="https://www.instagram.com/pawn.wear/" target="_blank" rel="noopener">Instagram'da Takip Et ↗</a>
+        <a class="btn ghost" href="https://www.instagram.com/pawnwear.reklam/" target="_blank" rel="noopener">Reklam Hesabı ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SSS -->
+  <section class="sec" id="sss" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head rv" style="justify-content:center;text-align:center">
+        <div>
+          <p class="eyebrow">S.S.S.</p>
+          <h2 style="margin-top:14px">Merak edilenler</h2>
+        </div>
+      </div>
+      <div class="faq rv">
+        <details><summary>Siparişim ne zaman kargoya verilir? <i>+</i></summary><p>Onaylanan siparişler aynı iş günü içinde kargoya teslim edilir. Kargo takip numarası SMS ile iletilir.</p></details>
+        <details><summary>Ürünler hangi malzemeden üretiliyor? <i>+</i></summary><p>Parçalar paslanmaz çelik ve kaplama malzemelerden üretilir; kararma yapmaz ve suya dayanıklıdır. Model bazlı detaylar ürün sayfasında yer alır.</p></details>
+        <details><summary>İade ve değişim yapabilir miyim? <i>+</i></summary><p>Ürünü teslim aldıktan sonra 14 gün içinde, kullanılmamış olması şartıyla değişim veya iade talebi oluşturabilirsin.</p></details>
+        <details><summary>Kapıda ödeme var mı? <i>+</i></summary><p>Shopier üzerinden kredi kartı, havale ve kapıda ödeme seçenekleriyle sipariş verebilirsin.</p></details>
+        <details><summary>Bakımını nasıl yapmalıyım? <i>+</i></summary><p>Parfüm ve kremi takıdan önce uygula, ılık sabunlu suyla sil ve yumuşak bezle kurula. Uzun süre takmayacaksan kutuda sakla.</p></details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="iletisim">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">Pawn Wear</div>
+        <p>Zamansız çizgiler, küçük partiler. Sorularını doğrudan yazabilirsin.</p>
+      </div>
+      <div>
+        <h4>Mağaza</h4>
+        <ul>
+          <li><a href="https://www.shopier.com/pawnwear" target="_blank" rel="noopener">Tüm Ürünler</a></li>
+          <li><a href="#koleksiyon">Kategoriler</a></li>
+          <li><a href="#sss">S.S.S.</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>İletişim</h4>
+        <ul>
+          <li><a id="waFoot" href="#">WhatsApp</a></li>
+          <li><a href="https://www.instagram.com/pawn.wear/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="mailto:info@pawnwear.com">info@pawnwear.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Pawn Wear</span>
+      <span>Kargo · İade · Gizlilik</span>
+    </div>
+  </div>
+</footer>
+
+<div class="dock">
+  <a id="waDock" class="wa" href="#">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1112 20z"/></svg>
+    WhatsApp
+  </a>
+  <a href="https://www.shopier.com/pawnwear" target="_blank" rel="noopener">Mağaza ↗</a>
+</div>
+
+<a class="wa-float" id="waFloat" href="#" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1112 20z"/></svg>
+</a>
+
+<script>
+/* ============================================================
+   1) AYARLAR — buradaki 3 satırı gerçek bilgilerle doldur
+   ============================================================ */
+const WA = "905XXXXXXXXX";            // WhatsApp numarası: 90 + numara, boşluk yok
+const WA_TEXT = "Merhaba, ürünleriniz hakkında bilgi almak istiyorum.";
+const SHOP = "https://www.shopier.com/pawnwear"; // Shopier mağaza adresin
+
+/* ============================================================
+   2) ÜRÜNLER — Shopier'den kopyala-yapıştır
+   Her ürün için: ad, kategori, fiyat, görsel adresi, ürün linki
+   Kategori: Kolye / Küpe / Yüzük / Bileklik / Set
+   Görsel adresi boş kalırsa şık bir yer tutucu çıkar.
+   ============================================================ */
+const PRODUCTS = [
+  { name:"Zincir Kolye",       cat:"Kolye",    price:"—", img:"", url:SHOP, badge:"Yeni" },
+  { name:"Halka Küpe",         cat:"Küpe",     price:"—", img:"", url:SHOP },
+  { name:"İnce Bant Yüzük",    cat:"Yüzük",    price:"—", img:"", url:SHOP },
+  { name:"Figaro Bileklik",    cat:"Bileklik", price:"—", img:"", url:SHOP },
+  { name:"Harf Kolye",         cat:"Kolye",    price:"—", img:"", url:SHOP, badge:"Çok Satan" },
+  { name:"Taşlı Küpe",         cat:"Küpe",     price:"—", img:"", url:SHOP },
+  { name:"Kalın Bant Yüzük",   cat:"Yüzük",    price:"—", img:"", url:SHOP },
+  { name:"Kolye + Bileklik",   cat:"Set",      price:"—", img:"", url:SHOP, badge:"Set" }
+];
+
+/* ============================================================
+   3) ANA FOTOĞRAFLAR — hero ve hakkımızda görseli (opsiyonel)
+   ============================================================ */
+const HERO_IMG  = ""; // örn: "gorseller/hero.jpg"
+const STORY_IMG = ""; // örn: "gorseller/atolye.jpg"
+
+/* ---------- görselleri yerleştir ---------- */
+function setFrame(id, src){
+  if(!src) return;
+  const el = document.getElementById(id);
+  const im = new Image();
+  im.src = src; im.alt = "";
+  im.onload = () => { el.querySelector('.ph-mark')?.remove(); el.prepend(im); };
+}
+setFrame('heroFrame', HERO_IMG);
+setFrame('storyFrame', STORY_IMG);
+
+/* ---------- ürünleri bas ---------- */
+const grid = document.getElementById('grid');
+function render(list){
+  grid.innerHTML = list.map(p => `
+    <article class="card rv in">
+      <a href="${p.url}" target="_blank" rel="noopener" aria-label="${p.name}">
+        <div class="card-media">
+          ${p.badge ? `<span class="badge">${p.badge}</span>` : ``}
+          ${p.img ? `` : `<div class="ph">PW</div>`}
+          ${p.img ? `<img src="${p.img}" alt="${p.name}" loading="lazy">` : ``}
+        </div>
+      </a>
+      <div class="card-body">
+        <h3 class="card-name">${p.name}</h3>
+        <div class="card-price">${p.price === "—" ? "Fiyat için Shopier" : "₺" + p.price}</div>
+        <a class="card-buy" href="${p.url}" target="_blank" rel="noopener">Satın Al
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+        </a>
+      </div>
+    </article>`).join('');
+}
+render(PRODUCTS);
+
+/* ---------- filtre ---------- */
+document.getElementById('filters').addEventListener('click', e => {
+  const b = e.target.closest('.chip'); if(!b) return;
+  document.querySelectorAll('.chip').forEach(c => c.classList.toggle('on', c === b));
+  const f = b.dataset.f;
+  render(f === 'all' ? PRODUCTS : PRODUCTS.filter(p => p.cat === f));
+});
+
+/* ---------- menü ---------- */
+const drawer = document.getElementById('drawer');
+document.getElementById('burger').onclick = () => drawer.classList.add('open');
+document.getElementById('close').onclick = () => drawer.classList.remove('open');
+drawer.querySelectorAll('a').forEach(a => a.onclick = () => drawer.classList.remove('open'));
+
+/* ---------- header gölgesi ---------- */
+addEventListener('scroll', () => {
+  document.getElementById('hdr').classList.toggle('stuck', scrollY > 8);
+}, {passive:true});
+
+/* ---------- reveal ---------- */
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+}), {threshold:.14});
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+/* ---------- whatsapp ---------- */
+const waLink = `https://wa.me/${WA}?text=${encodeURIComponent(WA_TEXT)}`;
+['waDock','waFloat','waFoot'].forEach(id => document.getElementById(id).href = waLink);
+</script>
+</body>
+</html>
