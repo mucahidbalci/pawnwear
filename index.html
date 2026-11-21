@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>PAWN WEAR — Takı Koleksiyonu</title>
-<meta name="description" content="PAWN WEAR — zamansız çizgilerle tasarlanmış takı koleksiyonu. Kolye, küpe, yüzük ve bileklikler.">
+<title>PAWN WEAR — Seçkin Parçalar</title>
+<meta name="description" content="PAWN WEAR — Loro Piana, Moncler, Prada, Kiton, Louis Vuitton ve daha fazlası. Seçilmiş parçalar, aynı gün kargo.">
 <meta name="theme-color" content="#F6F2EC">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -129,7 +129,7 @@ header.stuck{border-bottom-color:var(--line)}
 .hero h1{font-size:clamp(46px,9.5vw,116px);line-height:.94;letter-spacing:-.025em}
 .hero h1 em{font-style:italic;color:var(--gold)}
 .hero p.lead{
-  margin-top:26px;max-width:38ch;color:var(--muted);font-size:clamp(14px,1.5vw,16.5px);
+  margin-top:26px;max-width:40ch;color:var(--muted);font-size:clamp(14px,1.5vw,16.5px);
 }
 .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px}
 
@@ -159,11 +159,6 @@ header.stuck{border-bottom-color:var(--line)}
   position:relative;overflow:hidden;
 }
 .hero-frame img{width:100%;height:100%;object-fit:cover}
-.hero-frame .ph-mark{
-  position:absolute;inset:0;display:grid;place-items:center;
-  font-family:var(--serif);font-size:clamp(40px,7vw,68px);letter-spacing:.3em;
-  color:#CFC0A6;padding-left:.3em;
-}
 .hero-note{
   position:absolute;bottom:-14px;left:-14px;background:var(--bone);
   border:1px solid var(--line);padding:12px 18px;font-size:10px;
@@ -185,14 +180,14 @@ section{scroll-margin-top:90px}
 .sec{padding:clamp(56px,9vw,110px) 0}
 .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:28px;flex-wrap:wrap;margin-bottom:clamp(28px,4vw,48px)}
 .sec-head h2{font-size:clamp(30px,5.2vw,54px)}
-.sec-head p{color:var(--muted);max-width:34ch;font-size:14px}
+.sec-head p{color:var(--muted);max-width:36ch;font-size:14px}
 
 /* ---------- KATEGORİ ---------- */
 .cats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 .cat{
   position:relative;aspect-ratio:3/4;border:1px solid var(--line);
   display:flex;align-items:flex-end;padding:18px;overflow:hidden;
-  background:linear-gradient(180deg,#F3ECE1,#E8DDCB);
+  background:linear-gradient(180deg,#F3ECE1,#E8DDCB) center/cover no-repeat;
 }
 .cat span{
   font-family:var(--serif);font-size:clamp(16px,1.9vw,23px);
@@ -223,7 +218,7 @@ section{scroll-margin-top:90px}
 }
 .card{position:relative}
 .card-media{
-  position:relative;aspect-ratio:3/4;overflow:hidden;background:#EFE7DA;
+  position:relative;aspect-ratio:4/5;overflow:hidden;background:#EFE7DA;
   border:1px solid var(--line);
 }
 .card-media img{
@@ -253,7 +248,7 @@ section{scroll-margin-top:90px}
 
 /* ---------- EDİTORYAL ---------- */
 .editorial{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,6vw,80px);align-items:center}
-.editorial .frame{aspect-ratio:5/6;border:1px solid var(--line);background:linear-gradient(160deg,#EFE7DA,#DFD3BE);overflow:hidden;position:relative}
+.editorial .frame{aspect-ratio:5/6;border:1px solid var(--line);background:linear-gradient(160deg,#EFE7DA,#DFD3BE) center/cover no-repeat;overflow:hidden;position:relative}
 .editorial .frame img{width:100%;height:100%;object-fit:cover}
 .editorial h2{font-size:clamp(28px,4.6vw,50px);line-height:1.06}
 .editorial p{color:var(--muted);margin-top:20px;max-width:44ch;font-size:14.5px}
@@ -358,13 +353,13 @@ footer p{font-size:13px;max-width:34ch;margin-top:16px;color:#9A9287}
 
 <div class="draft">Taslak</div>
 
-<div class="bar">Tüm Türkiye'ye kargo &nbsp;·&nbsp; 750 ₺ üzeri ücretsiz</div>
+<div class="bar">16.00'a kadar verilen siparişler aynı gün kargoda &nbsp;·&nbsp; Yurtiçi Kargo</div>
 
 <header id="hdr">
   <div class="wrap nav">
     <a href="#top" class="logo">Pawn Wear</a>
     <nav class="nav-links">
-      <a href="#koleksiyon">Koleksiyon</a>
+      <a href="#koleksiyon">Kategoriler</a>
       <a href="#urunler">Ürünler</a>
       <a href="#hakkimizda">Hakkımızda</a>
       <a href="#sss">S.S.S.</a>
@@ -385,7 +380,7 @@ footer p{font-size:13px;max-width:34ch;margin-top:16px;color:#9A9287}
     <button class="close" id="close" aria-label="Kapat">×</button>
   </div>
   <nav>
-    <a href="#koleksiyon">Koleksiyon</a>
+    <a href="#koleksiyon">Kategoriler</a>
     <a href="#urunler">Ürünler</a>
     <a href="#hakkimizda">Hakkımızda</a>
     <a href="#sss">S.S.S.</a>
@@ -403,18 +398,16 @@ footer p{font-size:13px;max-width:34ch;margin-top:16px;color:#9A9287}
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <p class="eyebrow">Son Koleksiyon — 2026</p>
-        <h1 style="margin-top:18px">Takı değil,<br><em>imza.</em></h1>
-        <p class="lead">Az sayıda, özenle seçilmiş parça. Günlük kullanıma dayanıklı, zamansız çizgiler. Her detay kendini göstermek için değil, hatırlanmak için.</p>
+        <p class="eyebrow">Seçki — 2026</p>
+        <h1 style="margin-top:18px">Gardırop değil,<br><em>seçki.</em></h1>
+        <p class="lead">Loro Piana'dan Moncler'e, Prada'dan Kiton'a. 789 ilanın içinden süzülmüş parçalar; tek tek fotoğraflanmış, etiketli, kullanılmamış. Aynı gün kargo.</p>
         <div class="hero-cta">
-          <a class="btn solid" href="#urunler">Koleksiyonu Keşfet</a>
+          <a class="btn solid" href="#urunler">Ürünleri Gör</a>
           <a class="btn ghost" href="https://www.shopier.com/pawnwear" target="_blank" rel="noopener">Shopier ↗</a>
         </div>
       </div>
       <div class="hero-figure">
-        <div class="hero-frame" id="heroFrame">
-          <span class="ph-mark">PW</span>
-        </div>
+        <div class="hero-frame" id="heroFrame"></div>
         <div class="hero-note">Koleksiyon No. 01</div>
       </div>
     </div>
@@ -422,8 +415,8 @@ footer p{font-size:13px;max-width:34ch;margin-top:16px;color:#9A9287}
 
   <div class="marquee">
     <div class="marquee-track">
-      <span>Hipoalerjenik</span><span>Suya dayanıklı</span><span>Kararma yapmaz</span><span>El işçiliği</span><span>Kutulu teslim</span>
-      <span>Hipoalerjenik</span><span>Suya dayanıklı</span><span>Kararma yapmaz</span><span>El işçiliği</span><span>Kutulu teslim</span>
+      <span>Aynı gün kargo</span><span>Etiketli ürün</span><span>14 gün değişim</span><span>Havale indirimi</span><span>Yurtiçi Kargo</span>
+      <span>Aynı gün kargo</span><span>Etiketli ürün</span><span>14 gün değişim</span><span>Havale indirimi</span><span>Yurtiçi Kargo</span>
     </div>
   </div>
 
@@ -435,13 +428,13 @@ footer p{font-size:13px;max-width:34ch;margin-top:16px;color:#9A9287}
           <p class="eyebrow">Kategoriler</p>
           <h2 style="margin-top:14px">Nereden başlamak istersin</h2>
         </div>
-        <p>Dört başlık, tek bir çizgi. Tüm parçalar aynı elden çıkar.</p>
+        <p>Dış giyimden aksesuara. Tüm parçalar tek bir elden, tek bir çizgide.</p>
       </div>
       <div class="cats rv">
-        <a class="cat" href="https://www.shopier.com/pawnwear" target="_blank" rel="noopener"><small>01</small><span>Kolye</span></a>
-        <a class="cat" href="https://www.shopier.com/pawnwear" target="_blank" rel="noopener"><small>02</small><span>Küpe</span></a>
-        <a class="cat" href="https://www.shopier.com/pawnwear" target="_blank" rel="noopener"><small>03</small><span>Yüzük</span></a>
-        <a class="cat" href="https://www.shopier.com/pawnwear" target="_blank" rel="noopener"><small>04</small><span>Bileklik</span></a>
+        <a class="cat" href="https://www.shopier.com/pawnwear" target="_blank" rel="noopener" style="background-image:url('https://cdn.shopier.app/pictures_large/pawnwear_a5709afc2af5de0d999126ff560a339b.jpeg')"><small>01</small><span>Çanta</span></a>
+        <a class="cat" href="https://www.shopier.com/pawnwear" target="_blank" rel="noopener" style="background-image:url('https://cdn.shopier.app/pictures_large/pawnwear_c65e2a1aa1745964159f98730d9202dd.jpeg')"><small>02</small><span>Ceket</span></a>
+        <a class="cat" href="https://www.shopier.com/pawnwear" target="_blank" rel="noopener" style="background-image:url('https://cdn.shopier.app/pictures_large/pawnwear_9bc4fc11b3f252488c99f80705db4ceb.jpeg')"><small>03</small><span>Kazak / Triko</span></a>
+        <a class="cat" href="https://www.shopier.com/pawnwear" target="_blank" rel="noopener" style="background-image:url('https://cdn.shopier.app/pictures_large/pawnwear_ba24c7e3f2517c2f7f02aff43ed9ca1f.jpeg')"><small>04</small><span>Ayakkabı</span></a>
       </div>
     </div>
   </section>
@@ -458,11 +451,16 @@ footer p{font-size:13px;max-width:34ch;margin-top:16px;color:#9A9287}
       </div>
       <div class="filters rv" id="filters">
         <button class="chip on" data-f="all">Tümü</button>
-        <button class="chip" data-f="Kolye">Kolye</button>
-        <button class="chip" data-f="Küpe">Küpe</button>
-        <button class="chip" data-f="Yüzük">Yüzük</button>
-        <button class="chip" data-f="Bileklik">Bileklik</button>
-        <button class="chip" data-f="Set">Set</button>
+        <button class="chip" data-f="Çanta">Çanta</button>
+        <button class="chip" data-f="Ceket">Ceket</button>
+        <button class="chip" data-f="Mont">Mont</button>
+        <button class="chip" data-f="Kazak">Kazak / Triko</button>
+        <button class="chip" data-f="T-shirt">T-shirt</button>
+        <button class="chip" data-f="Pantolon">Pantolon</button>
+        <button class="chip" data-f="Ayakkabı">Ayakkabı</button>
+        <button class="chip" data-f="Gözlük">Gözlük</button>
+        <button class="chip" data-f="Cüzdan">Kartlık / Cüzdan</button>
+        <button class="chip" data-f="Aksesuar">Aksesuar</button>
       </div>
       <div class="grid" id="grid" style="margin-top:26px"></div>
     </div>
@@ -474,13 +472,13 @@ footer p{font-size:13px;max-width:34ch;margin-top:16px;color:#9A9287}
       <div class="frame rv" id="storyFrame"></div>
       <div class="rv">
         <p class="eyebrow">Hakkımızda</p>
-        <h2 style="margin-top:14px">Süs değil,<br>sahip olunan.</h2>
-        <p>PAWN WEAR, kalabalığa karışmayan parçalar için kuruldu. Her model küçük partiler halinde üretilir; bu yüzden aynı takıyı çok az kişide görürsün.</p>
-        <p>Malzeme seçiminde günlük hayat önceliğimiz: duşta çıkarmadan taktığın, aylar sonra ilk günkü rengini koruyan parçalar.</p>
+        <h2 style="margin-top:14px">Vitrin değil,<br>gardırop.</h2>
+        <p>PAWN WEAR, Çerkezköy'de kurulmuş bir giyim ve aksesuar mağazası. Kataloğun tamamı etiketli ve kullanılmamış parçalardan oluşur; her ilan gerçek fotoğrafla yayınlanır.</p>
+        <p>Siparişler Yurtiçi Kargo ile 1–2 iş günü içinde teslim edilir. 14 gün içinde değişim yapabilirsin; havale ile ödemede özel indirim uygulanır.</p>
         <div class="stats">
+          <div><b>789</b><small>Ürün</small></div>
           <div><b>10K+</b><small>Takipçi</small></div>
-          <div><b>%100</b><small>Orjinal Ürün</small></div>
-          <div><b>1–3 Gün</b><small>Kargo</small></div>
+          <div><b>1–2 Gün</b><small>Teslimat</small></div>
         </div>
       </div>
     </div>
@@ -496,13 +494,13 @@ footer p{font-size:13px;max-width:34ch;margin-top:16px;color:#9A9287}
       </div>
       <div>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 7h11v10H3z"/><path d="M14 10h4l3 3v4h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/></svg>
-        <h3>Hızlı Kargo</h3>
-        <p>Aynı gün kargoya teslim</p>
+        <h3>Aynı Gün Kargo</h3>
+        <p>16.00'ya kadar aynı gün teslim</p>
       </div>
       <div>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 12a9 9 0 1015.5-6.2"/><path d="M18 3v5h-5"/></svg>
-        <h3>Kolay Değişim</h3>
-        <p>14 gün içinde iade hakkı</p>
+        <h3>14 Gün Değişim</h3>
+        <p>Etiketi çıkarılmamış ürünlerde</p>
       </div>
     </div>
   </div>
@@ -511,7 +509,7 @@ footer p{font-size:13px;max-width:34ch;margin-top:16px;color:#9A9287}
   <section class="sec ig-band">
     <div class="wrap rv">
       <p class="eyebrow">@pawn.wear</p>
-      <h2 style="margin-top:14px;font-size:clamp(28px,4.8vw,50px)">Kamera arkası ve<br>yeni gelenler</h2>
+      <h2 style="margin-top:14px;font-size:clamp(28px,4.8vw,50px)">Yeni gelenler<br>ve kombinler</h2>
       <div class="ig-handles">
         <a class="btn ghost" href="https://www.instagram.com/pawn.wear/" target="_blank" rel="noopener">Instagram'da Takip Et ↗</a>
         <a class="btn ghost" href="https://www.instagram.com/pawnwear.reklam/" target="_blank" rel="noopener">Reklam Hesabı ↗</a>
@@ -529,11 +527,11 @@ footer p{font-size:13px;max-width:34ch;margin-top:16px;color:#9A9287}
         </div>
       </div>
       <div class="faq rv">
-        <details><summary>Siparişim ne zaman kargoya verilir? <i>+</i></summary><p>Onaylanan siparişler aynı iş günü içinde kargoya teslim edilir. Kargo takip numarası SMS ile iletilir.</p></details>
-        <details><summary>Ürünler hangi malzemeden üretiliyor? <i>+</i></summary><p>Parçalar paslanmaz çelik ve kaplama malzemelerden üretilir; kararma yapmaz ve suya dayanıklıdır. Model bazlı detaylar ürün sayfasında yer alır.</p></details>
-        <details><summary>İade ve değişim yapabilir miyim? <i>+</i></summary><p>Ürünü teslim aldıktan sonra 14 gün içinde, kullanılmamış olması şartıyla değişim veya iade talebi oluşturabilirsin.</p></details>
-        <details><summary>Kapıda ödeme var mı? <i>+</i></summary><p>Shopier üzerinden kredi kartı, havale ve kapıda ödeme seçenekleriyle sipariş verebilirsin.</p></details>
-        <details><summary>Bakımını nasıl yapmalıyım? <i>+</i></summary><p>Parfüm ve kremi takıdan önce uygula, ılık sabunlu suyla sil ve yumuşak bezle kurula. Uzun süre takmayacaksan kutuda sakla.</p></details>
+        <details><summary>Siparişim ne zaman kargoya verilir? <i>+</i></summary><p>Saat 16.00'ya kadar verilen siparişler aynı gün kargoya teslim edilir. Teslimat Yurtiçi Kargo ile 1–2 iş günü içinde yapılır, kargo takip numarası SMS ile iletilir.</p></details>
+        <details><summary>Ürünler orijinal mi? <i>+</i></summary><p>Tüm ürünler yüksek kalite standartlarında üretilir ve etiketli olarak gönderilir. Model bazlı detaylar ilgili ürün sayfasında yer alır.</p></details>
+        <details><summary>İade veya değişim yapabilir miyim? <i>+</i></summary><p>Teslimattan sonra 14 gün içinde değişim talebinde bulunabilirsin. İade seçeneği yoktur. Ürünün kullanılmamış, etiketi çıkarılmamış ve yeniden satılabilir durumda olması gerekir; değişim kargo ücreti alıcıya aittir.</p></details>
+        <details><summary>Hangi ödeme yöntemlerini kullanıyorsunuz? <i>+</i></summary><p>Shopier üzerinden kredi kartı ve havale/EFT ile ödeme yapabilirsin. Havale ile verilen siparişlerde özel indirim uygulanır.</p></details>
+        <details><summary>Bedenim olup olmadığını nasıl öğrenirim? <i>+</i></summary><p>Ürün ölçülerinde ±1 cm farklılık görülebilir. Sipariş öncesi beden ve ölçü teyidi için WhatsApp'tan doğrudan yazabilirsin.</p></details>
       </div>
     </div>
   </section>
@@ -545,7 +543,7 @@ footer p{font-size:13px;max-width:34ch;margin-top:16px;color:#9A9287}
     <div class="foot-grid">
       <div>
         <div class="foot-logo">Pawn Wear</div>
-        <p>Zamansız çizgiler, küçük partiler. Sorularını doğrudan yazabilirsin.</p>
+        <p>Gazi Mustafa Kemalpaşa, Özer Sk. No: 1/A, 59500 Çerkezköy / Tekirdağ</p>
       </div>
       <div>
         <h4>Mağaza</h4>
@@ -558,15 +556,15 @@ footer p{font-size:13px;max-width:34ch;margin-top:16px;color:#9A9287}
       <div>
         <h4>İletişim</h4>
         <ul>
-          <li><a id="waFoot" href="#">WhatsApp · +90 545 192 17 05</a></li>
+          <li><a id="waFoot" href="#">WhatsApp · 0545 192 17 05</a></li>
           <li><a href="https://www.instagram.com/pawn.wear/" target="_blank" rel="noopener">Instagram</a></li>
-          <li><a href="mailto:info@pawnwear.com">info@pawnwear.com</a></li>
+          <li><a href="https://www.instagram.com/pawnwear.reklam/" target="_blank" rel="noopener">Reklam Hesabı</a></li>
         </ul>
       </div>
     </div>
     <div class="foot-bottom">
       <span>© 2026 Pawn Wear</span>
-      <span>Kargo · İade · Gizlilik</span>
+      <span>Kargo · Değişim · Gizlilik</span>
     </div>
   </div>
 </footer>
@@ -589,41 +587,54 @@ footer p{font-size:13px;max-width:34ch;margin-top:16px;color:#9A9287}
    ============================================================ */
 const WA = "905451921705";            // WhatsApp: 90 + numara, boşluksuz
 const WA_TEXT = "Merhaba, ürünleriniz hakkında bilgi almak istiyorum.";
-const SHOP = "https://www.shopier.com/pawnwear"; // Shopier mağaza adresin
+const SHOP = "https://www.shopier.com/pawnwear";
+const CDN_MID = "https://cdn.shopier.app/pictures_mid/";
+const CDN_LG  = "https://cdn.shopier.app/pictures_large/";
 
 /* ============================================================
-   2) ÜRÜNLER — Shopier'den kopyala-yapıştır
-   Her ürün için: ad, kategori, fiyat, görsel adresi, ürün linki
-   Kategori: Kolye / Küpe / Yüzük / Bileklik / Set
-   Görsel adresi boş kalırsa şık bir yer tutucu çıkar.
+   2) ÜRÜNLER — hepsi Shopier'deki gerçek ilanlar
    ============================================================ */
 const PRODUCTS = [
-  { name:"Zincir Kolye",       cat:"Kolye",    price:"—", img:"", url:SHOP, badge:"Yeni" },
-  { name:"Halka Küpe",         cat:"Küpe",     price:"—", img:"", url:SHOP },
-  { name:"İnce Bant Yüzük",    cat:"Yüzük",    price:"—", img:"", url:SHOP },
-  { name:"Figaro Bileklik",    cat:"Bileklik", price:"—", img:"", url:SHOP },
-  { name:"Harf Kolye",         cat:"Kolye",    price:"—", img:"", url:SHOP, badge:"Çok Satan" },
-  { name:"Taşlı Küpe",         cat:"Küpe",     price:"—", img:"", url:SHOP },
-  { name:"Kalın Bant Yüzük",   cat:"Yüzük",    price:"—", img:"", url:SHOP },
-  { name:"Kolye + Bileklik",   cat:"Set",      price:"—", img:"", url:SHOP, badge:"Set" }
+  { name:"Louis Vuitton Bandoulière 50lt Keepal", cat:"Çanta", price:"18.250", img:"553bc4c4c94491bb5fb5cd626c5c4aee", url:"https://www.shopier.com/pawnwear/51276389", badge:"Son ürün" },
+  { name:"Loro Piana Yün ve Kaşmir Karışımlı Ceket", cat:"Ceket", price:"11.850", img:"14e91cdc34f6a1d551e7254542131921", url:"https://www.shopier.com/pawnwear/50922257", badge:"Son ürün" },
+  { name:"Moncler Yünlü Logo İşlemeli Kazak", cat:"Kazak", price:"6.750", img:"37b9014e78e1c6a6f9b696e1c9ad169d", url:"https://www.shopier.com/pawnwear/52367002" },
+  { name:"Prada Hakiki Deri Kartlık", cat:"Cüzdan", price:"6.250", img:"44c2c860284acfacfa98f902d8a4ee7b", url:"https://www.shopier.com/pawnwear/39226792" },
+  { name:"Berluti Shadow Sneaker", cat:"Ayakkabı", price:"16.400", img:"ba24c7e3f2517c2f7f02aff43ed9ca1f", url:"https://www.shopier.com/pawnwear/53009330", badge:"Yeni" },
+  { name:"Cartier Safir Camlı Güneş Gözlüğü CRT250", cat:"Gözlük", price:"9.950", img:"12ff73237ddd18863e27b97ebede6a78", url:"https://www.shopier.com/pawnwear/49408438" },
+  { name:"Loro Piana Siyah Logo İşlemeli T-shirt", cat:"T-shirt", price:"4.000", img:"7ed1f4892ec9e5637f8ae78f72db482e", url:"https://www.shopier.com/pawnwear/44699851" },
+  { name:"Prada Yünlü Lacivert Pocket İşlemeli Kazak", cat:"Kazak", price:"6.250", img:"9bc4fc11b3f252488c99f80705db4ceb", url:"https://www.shopier.com/pawnwear/52175807" },
+  { name:"Moncler Kaz Tüylü Kadife Dolgulu Yelek", cat:"Mont", price:"14.250", img:"947e8287d99b3452a4c789a7af4d8e45", url:"https://www.shopier.com/pawnwear/50995000" },
+  { name:"Hermes Ahşap Tepsi", cat:"Aksesuar", price:"25.000", img:"dc7dd1d762f08c66fe413f590241d650", url:"https://www.shopier.com/pawnwear/49920391", badge:"Son ürün" },
+  { name:"Prada Haki Re-Nylon Yağmurluk Ceket", cat:"Ceket", price:"9.850", img:"39b0c318cc46df3005eb858b1879f082", url:"https://www.shopier.com/pawnwear/51016156" },
+  { name:"Kiton Beyaz Örgülü Yün ve Kaşmir Karışımlı Kazak", cat:"Kazak", price:"5.850", img:"9f63d2c6e650dbba9c623122ab231b54", url:"https://www.shopier.com/pawnwear/51014084" },
+  { name:"Dior Logo Basklı Siyah Sweatshirt", cat:"T-shirt", price:"5.350", img:"7ed044995b142b4054e1492d59623a37", url:"https://www.shopier.com/pawnwear/52618303" },
+  { name:"Prada Fermuarlı Cüzdan", cat:"Cüzdan", price:"9.250", img:"f6f80000a19f52f7f5629a8b38723df1", url:"https://www.shopier.com/pawnwear/39225786" },
+  { name:"Louis Vuitton Montsouris Sırt Çantası", cat:"Çanta", price:"19.450", img:"a5709afc2af5de0d999126ff560a339b", url:"https://www.shopier.com/pawnwear/51276460", badge:"Son ürün" },
+  { name:"Prada Çift Taraflı Sea Beyond Koleksiyon Ceketi", cat:"Ceket", price:"10.800", img:"c65e2a1aa1745964159f98730d9202dd", url:"https://www.shopier.com/pawnwear/51842496" },
+  { name:"Kiton Bordo Fermuarlı Örgülü Yün ve Kaşmir Karışımlı Kazak", cat:"Kazak", price:"6.450", img:"d164d99bce9cd748d8096bfb75c16839", url:"https://www.shopier.com/pawnwear/51014199" },
+  { name:"Loro Piana Krem Logo İşlemeli T-shirt", cat:"T-shirt", price:"4.000", img:"be4ac77388b05b22b0f85ba947e44f21", url:"https://www.shopier.com/pawnwear/44699815" },
+  { name:"Rimowa Kabin Boy Valiz", cat:"Çanta", price:"42.500", img:"b5fdf9e4ee6069466716f9b96eb44d85", url:"https://www.shopier.com/pawnwear/47609243" },
+  { name:"Berluti Shadow Sneaker", cat:"Ayakkabı", price:"16.400", img:"4df94f45765ec5f2b8b016e5fcfca112", url:"https://www.shopier.com/pawnwear/53009228", badge:"Yeni" },
+  { name:"Kiton Siyah Örgülü Yün ve Kaşmir Karışımlı Kazak", cat:"Kazak", price:"5.850", img:"beb83fa3b4e8407c5808377b3f2a7390", url:"https://www.shopier.com/pawnwear/51014124" },
+  { name:"Prada Siyah Re-Nylon Yağmurluk Ceket", cat:"Ceket", price:"9.850", img:"c08146facfe82a180211a0d7f313bb01", url:"https://www.shopier.com/pawnwear/51016653" },
+  { name:"Rimowa Haki Aliminyum Kılıf", cat:"Aksesuar", price:"4.500", img:"878ed7edcd159a48b1786e206a0dc4e2", url:"https://www.shopier.com/pawnwear/44874947", badge:"Son ürün" },
+  { name:"Loro Piana Lacivert Pamuklu Logo İşlemeli Pantolon", cat:"Pantolon", price:"4.950", img:"30bca61d521271ee47889f8e613f81b9", url:"https://www.shopier.com/pawnwear/36807232" }
 ];
 
 /* ============================================================
-   3) ANA FOTOĞRAFLAR — hero ve hakkımızda görseli (opsiyonel)
+   3) ANA FOTOĞRAFLAR
    ============================================================ */
-const HERO_IMG  = ""; // örn: "gorseller/hero.jpg"
-const STORY_IMG = ""; // örn: "gorseller/atolye.jpg"
-
-/* ---------- görselleri yerleştir ---------- */
-function setFrame(id, src){
-  if(!src) return;
+function setFrame(id, code){
   const el = document.getElementById(id);
+  if(!el) return;
   const im = new Image();
-  im.src = src; im.alt = "";
-  im.onload = () => { el.querySelector('.ph-mark')?.remove(); el.prepend(im); };
+  im.alt = "";
+  im.onerror = () => { im.onerror = null; im.src = CDN_MID + "pawnwear_" + code + ".jpeg"; };
+  im.src = CDN_LG + "pawnwear_" + code + ".jpeg";
+  el.appendChild(im);
 }
-setFrame('heroFrame', HERO_IMG);
-setFrame('storyFrame', STORY_IMG);
+setFrame('heroFrame',  "553bc4c4c94491bb5fb5cd626c5c4aee");
+setFrame('storyFrame', "39b0c318cc46df3005eb858b1879f082");
 
 /* ---------- ürünleri bas ---------- */
 const grid = document.getElementById('grid');
@@ -633,13 +644,13 @@ function render(list){
       <a href="${p.url}" target="_blank" rel="noopener" aria-label="${p.name}">
         <div class="card-media">
           ${p.badge ? `<span class="badge">${p.badge}</span>` : ``}
-          ${p.img ? `` : `<div class="ph">PW</div>`}
-          ${p.img ? `<img src="${p.img}" alt="${p.name}" loading="lazy">` : ``}
+          <img src="${CDN_LG}pawnwear_${p.img}.jpeg" alt="${p.name}" loading="lazy"
+               onerror="this.onerror=null;this.src='${CDN_MID}pawnwear_${p.img}.jpeg'">
         </div>
       </a>
       <div class="card-body">
         <h3 class="card-name">${p.name}</h3>
-        <div class="card-price">${p.price === "—" ? "Fiyat için Shopier" : "₺" + p.price}</div>
+        <div class="card-price">${p.price} ₺</div>
         <a class="card-buy" href="${p.url}" target="_blank" rel="noopener">Satın Al
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
         </a>
